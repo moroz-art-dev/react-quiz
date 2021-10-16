@@ -74,8 +74,7 @@ export default class QuizCreator extends Component {
         event.preventDefault()
 
         try {
-          const response = await axios.post('https://react-quiz-57e56-default-rtdb.firebaseio.com/quizes.json', this.state.quiz)
-          console.log(response.data)
+          await axios.post('https://react-quiz-57e56-default-rtdb.firebaseio.com/quizes.json', this.state.quiz)
 
           this.setState({
               quiz: [],
@@ -86,14 +85,6 @@ export default class QuizCreator extends Component {
         } catch (e) {
             console.log(e)
         }
-
-        // axios.post('https://react-quiz-57e56-default-rtdb.firebaseio.com/quizes.json', this.state.quiz)
-        //     .then(response => {
-        //         console.log(response)
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
     }
 
     changeHandler = (value, controlName) => {
